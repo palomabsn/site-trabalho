@@ -540,52 +540,97 @@ footer{
 
 /*Responsividade*/
 
-@media (max-width: 992px) {
-    .about-content{
-        flex-direction: column;
-    }
-    .contact-container{
-        flex-direction: column;
-    }
-}
-
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: var(--primary);
-        flex-direction: column;
-        padding: 20px 0;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    nav ul.show{
-        display: flex;
-    }
 
-    nav ul li{
-        margin: 10px 0;
-        text-align: center;
-    }
-    .mobile-menu{
-        display: block;
-    }
-    .hero h2{
-        font-size: 2.5rem;
-    }
-    .footer-content{
-        flex-direction: column;
-        gap: 20px;
-    }
-}
+  /* Container mais compacto */
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
 
-@media (max-width: 576px){
-        .hero h2{
-            font-size: 2rem;
-        }
-        .about-text h3{
-            font-size: 1.5rem;
-        }
+  /* Header */
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo h1 {
+    margin-right: 0;
+    font-size: 1.4rem;
+  }
+
+  .menu-topo ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .menu-topo ul li {
+    margin: 0;
+  }
+
+  /* Hero */
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero h3 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  /* About */
+  .about {
+    padding: 80px 20px;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+  }
+
+  /* Projects */
+  .projects {
+    padding: 80px 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Portfolio */
+  .portfolio-grid {
+    padding: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+  }
+
+  /* Contact */
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 20px;
+  }
+
+  .contact-info h3, 
+  .contact-form h3 {
+    font-size: 1.5rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+  }
 }

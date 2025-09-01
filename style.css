@@ -540,97 +540,52 @@ footer{
 
 /*Responsividade*/
 
+/* Rolagem suave via CSS */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile Menu */
 @media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
 
-  /* Container mais compacto */
-  .container {
-    width: 100%;
-    padding: 0 10px;
-  }
+    .menu-topo {
+        display: none; /* escondido por padrão no mobile */
+        position: absolute;
+        top: 70px; /* ajuste conforme altura do header */
+        right: 0;
+        width: 100%;
+        background: var(--secondary);
+        padding: 16px 0;
+        z-index: 999;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
 
-  /* Header */
-  .header-container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+    .menu-topo ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 
-  .logo h1 {
-    margin-right: 0;
-    font-size: 1.4rem;
-  }
+    .menu-topo.show {
+        display: flex; /* aparece quando .show é aplicada */
+    }
+}
 
-  .menu-topo ul {
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 15px;
-  }
-
-  .menu-topo ul li {
-    margin: 0;
-  }
-
-  /* Hero */
-  .hero h2 {
-    font-size: 2.2rem;
-  }
-
-  .hero h3 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    font-size: 1.1rem;
-  }
-
-  /* About */
-  .about {
-    padding: 80px 20px;
-  }
-
-  .about-text p {
-    font-size: 1.1rem;
-  }
-
-  /* Projects */
-  .projects {
-    padding: 80px 20px;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  /* Portfolio */
-  .portfolio-grid {
-    padding: 20px;
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-title {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-  }
-
-  /* Contact */
-  .contact-container {
-    flex-direction: column;
-  }
-
-  .contact-info,
-  .contact-form {
-    padding: 20px;
-  }
-
-  .contact-info h3, 
-  .contact-form h3 {
-    font-size: 1.5rem;
-  }
-
-  /* Footer */
-  .footer-content {
-    flex-direction: column;
-    gap: 15px;
-  }
+/* Desktop garante menu visível */
+@media (min-width: 769px) {
+    .menu-topo {
+        display: flex !important;
+        flex-direction: row;
+    }
 }

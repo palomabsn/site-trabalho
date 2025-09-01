@@ -80,6 +80,16 @@ header{
     display: flex;
     list-style: none;
 }
+.menu-topo ul.show{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: var(--secondary);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
 .menu-topo ul li{
     margin-left: 70px;
 }
@@ -112,6 +122,7 @@ header{
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: rgb(3, 85, 168);
 }
 
 /*Hero Section*/
@@ -540,44 +551,11 @@ footer{
 
 /*Responsividade*/
 
-/* Esconde menu desktop no mobile */
-@media screen and (max-width: 768px) {
-    .menu-topo ul {
-        flex-direction: column;
-        display: none; /* escondido inicialmente */
-        background-color: var(--secondary);
-        width: 100%;
-        position: absolute;
-        top: 60px; /* altura do header */
-        left: 0;
-        padding: 10px 0;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        z-index: 999;
-    }
-
-    .menu-topo ul.show {
-        display: flex;
-    }
-
-    .menu-topo ul li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    .mobile-menu {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-        font-size: 1.8rem;
-        cursor: pointer;
-        color: rgb(3, 85, 168);
-    }
-}
-
-/* Mantém o menu desktop normalmente acima de 768px */
-@media screen and (min-width: 769px) {
-    .mobile-menu {
+@media (max-width: 768px){
+    .menu-topo ul{
         display: none;
+    }
+    .mobile-menu{
+        display: block;
     }
 }

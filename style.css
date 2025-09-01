@@ -540,52 +540,44 @@ footer{
 
 /*Responsividade*/
 
-/* Rolagem suave via CSS */
-html {
-    scroll-behavior: smooth;
-}
+/* Esconde menu desktop no mobile */
+@media screen and (max-width: 768px) {
+    .menu-topo ul {
+        flex-direction: column;
+        display: none; /* escondido inicialmente */
+        background-color: var(--secondary);
+        width: 100%;
+        position: absolute;
+        top: 60px; /* altura do header */
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        z-index: 999;
+    }
 
-/* Mobile Menu */
-@media (max-width: 768px) {
+    .menu-topo ul.show {
+        display: flex;
+    }
+
+    .menu-topo ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
     .mobile-menu {
         display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
         font-size: 1.8rem;
         cursor: pointer;
-    }
-
-    .menu-topo {
-        display: none; /* escondido por padrão no mobile */
-        position: absolute;
-        top: 70px; /* ajuste conforme altura do header */
-        right: 0;
-        width: 100%;
-        background: var(--secondary);
-        padding: 16px 0;
-        z-index: 999;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .menu-topo ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    .menu-topo.show {
-        display: flex; /* aparece quando .show é aplicada */
+        color: rgb(3, 85, 168);
     }
 }
 
-/* Desktop garante menu visível */
-@media (min-width: 769px) {
-    .menu-topo {
-        display: flex !important;
-        flex-direction: row;
+/* Mantém o menu desktop normalmente acima de 768px */
+@media screen and (min-width: 769px) {
+    .mobile-menu {
+        display: none;
     }
 }

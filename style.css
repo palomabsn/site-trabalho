@@ -63,10 +63,12 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 15px 0;
 }
 .logo{
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 .logo h1{
     font-size: 1.7rem;
@@ -75,6 +77,14 @@ header{
 }
 .logo span{
     color: rgb(3, 85, 168);
+}
+.menu-topo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    width: auto;
 }
 .menu-topo ul{
     display: flex;
@@ -87,7 +97,7 @@ header{
     color: rgb(3, 85, 168);
     text-decoration: none;
     font-size: 1.0rem;
-    font-family: Pompiere;
+    font-family: Pompiere, sans-serif;
     font-weight:900;
     text-transform: uppercase;
     transition: color 0.3s;
@@ -551,29 +561,39 @@ footer{
         }
 
         @media (max-width: 768px) {
-            nav ul {
+            .menu-topo{
+                justify-content: space-between;
+            }
+            .menu-topo ul{
                 display: none;
+                flex-direction: column;
                 position: absolute;
-                top: 70px;
+                top: 60px;
+                right: 0;
                 left: 0;
                 width: 100%;
-                background: var(--primary);
-                flex-direction: column;
+                background-color: var(--primary);
+                z-index: 9999;
+                text-align: center;
                 padding: 20px 0;
-                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                box-shadow: 0 5px 10px rgba;
+                border-top: 1px solid var(--light);
             }
-            
-            nav ul.show {
+            .menu-topo ul.show{
                 display: flex;
             }
             
-            nav ul li {
-                margin: 10px 0;
+            .menu-topo ul li {
+                margin: 15px 0;
                 text-align: center;
             }
             
             .mobile-menu {
                 display: block;
+                color: rgb(3, 85, 168);
+                font-size: 2rem;
+                cursor: pointer;
+                z-index: 10000;
             }
             
             .hero h2 {

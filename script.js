@@ -1,25 +1,15 @@
-// Seleciona elementos
-const mobileMenu = document.getElementById('mobileMenu');
-const menu = document.getElementById('menu');
+function menuShow() {
+    let menuMobile = document.querySelector('.mobile-menu');
+    if (menuMobile.classList.contains('open')) {
+        menuMobile.classList.remove('open');
+        document.querySelector('.icon')
+    }    else{
+            menuMobile.classList.add('open');
+        }   
+}
 
-// Toggle menu mobile
-mobileMenu.addEventListener('click', () => {
-    menu.classList.toggle('show');
-});
-
-// Smooth Scroll para links do menu
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        // Fecha o menu se estiver aberto
-        if (menu.classList.contains('show')) {
-            menu.classList.remove('show');
-        }
-
-        // Scroll suave
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+document.querySelectorAll('.mobile-menu a').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelector('.mobile-menu').classList.remove('open');
     });
 });

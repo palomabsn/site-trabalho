@@ -28,19 +28,17 @@ h3,h4{
 }
 .btn{
     display: inline-block;
-    background: var(--light);
+    background-color: var(--light);
     color: black;
-    font-family: Pompiere, sans-serif;
     text-transform: uppercase;
     padding: 12px 25px;
     text-decoration: none;
-    font-weight:bolder;
+    font-weight: bolder;
     letter-spacing: 1px;
     border-radius: 15px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.8s ease;
 }
-
 .btn:hover{
     background-color: var(--accent);
     transform: translateY(-3px);
@@ -52,48 +50,48 @@ h3,h4{
 header{
     background-color: var(--secondary);
     color: black;
-    padding: 15px 0;
+    padding: 5px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgb(30, 54, 84);
 }
-.header-container{
+.nav-bar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
 }
 .logo{
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
+}
+.logo img{
+    align-self: center;
 }
 .logo h1{
     font-size: 1.7rem;
-    margin-left: 10px;
-    margin-right: 150px;
+    text-shadow: 0.3px 0.3px 0.3px black;;
 }
 .logo span{
     color: rgb(3, 85, 168);
 }
-.menu-topo{
+.nav-list{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
-    gap: 30px;
     position: relative;
-    width: auto;
 }
-.menu-topo ul{
+.nav-list ul{
     display: flex;
     list-style: none;
+    justify-content: center;
 }
-.menu-topo ul li{
-    margin-left: 70px;
+.nav-list ul li{
+    margin: 0 15px;
 }
-.menu-topo ul li a{
+.nav-list ul li a{
     color: rgb(3, 85, 168);
     text-decoration: none;
     font-size: 1.0rem;
@@ -103,10 +101,10 @@ header{
     transition: color 0.3s;
     position:relative;
 }
-.menu-topo ul li a:hover{
+.nav-list ul li a:hover{
     color: black;
 }
-.menu-topo ul li a::after{
+.nav-list ul li a::after{
     content: '';
     position: absolute;
     bottom: -5px;
@@ -115,13 +113,71 @@ header{
     height: 2px;
     background: var(--primary);
 }
-.menu-topo ul li a:hover::after{
+.nav-list ul li a:hover::after{
     width: 100%;
 }
-.mobile-menu{
+.mobile-menu-icon{
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    color: rgb(30, 54, 84);
+}
+.mobile-menu{
+    display: none;
+}
+.mobile-menu ul{
+    list-style: none;
+}
+.mobile-menu ul li a{
+    color: rgb(3, 85, 168);
+    text-decoration: none;
+    font-size: 1.0rem;
+    font-family: Pompiere, sans-serif;
+    font-weight:900;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position:relative;
+}
+.mobile-menu ul li a:hover{
+    color: black;
+}
+.mobile-menu ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+}
+.mobile-menu ul li a:hover::after{
+    width: 100%;
+}
+
+@media screen and (max-width: 730px) {
+    .nav-bar{
+        padding: 1.5rem 4rem;
+    }
+    .nav-list{
+        display: none;
+    }
+    .mobile-menu-icon{
+        display: block;
+    }
+    .mobile-menu ul{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+        display: block;
+        padding-top: 1.2rem;
+    }
+    .mobile-menu ul li{
+        margin: 15px 0;
+    }
+    .open{
+        display: block;
+    }
 }
 
 /*Hero Section*/
@@ -132,6 +188,7 @@ header{
     display: flex;
     align-items: center;
     padding-top: 70px;
+    text-align: center;
 }
 .hero-content{
     max-width: 800px;
@@ -535,87 +592,11 @@ footer{
     font-size: 1.2rem;
     color: black;
 }
-#portfolio,
-#seriesingles,
-#animes,
-#culinaria,
-#desenhos,
-#documental,
-#realities,
-#esporte,
-#longas,
-#outrosidiomas {
-    scroll-margin-top: 120px;
+
+/*Media*/
+
+@media screen and (max-width: 730px) {
+    .about, .projects, .contact{
+        scroll-margin-top: 50px;
+    }
 }
-
-/*Responsividade*/
-
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .contact-container {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .menu-topo{
-                justify-content: space-between;
-            }
-            .menu-topo ul{
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary);
-                z-index: 9999;
-                text-align: center;
-                padding: 20px 0;
-                box-shadow: 0 5px 10px rgba;
-                border-top: 1px solid var(--light);
-            }
-            .menu-topo ul.show{
-                display: flex;
-            }
-            
-            .menu-topo ul li {
-                margin: 15px 0;
-                text-align: center;
-            }
-            
-            .mobile-menu {
-                display: block;
-                color: rgb(3, 85, 168);
-                font-size: 2rem;
-                cursor: pointer;
-                z-index: 10000;
-            }
-            
-            .hero h2 {
-                font-size: 2.5rem;
-            }
-            
-            .footer-content {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-            
-            .about-text h3 {
-                font-size: 1.5rem;
-            }
-        }

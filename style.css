@@ -50,8 +50,9 @@ h3,h4{
 header{
     background-color: var(--secondary);
     color: black;
-    padding: 5px;
+    padding: 15px 30px;
     position: fixed;
+    height: 150px;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -61,18 +62,23 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0;
+    height: 100%;
+    gap: 20px;
 }
 .logo{
     display: flex;
     align-items: center;
     gap: 20px;
+    padding: 0 80px;
 }
 .logo img{
     align-self: center;
 }
 .logo h1{
     font-size: 1.7rem;
-    text-shadow: 0.3px 0.3px 0.3px black;;
+    text-shadow: 0.3px 0.3px 0.3px rgb(103, 103, 104);
+    white-space: nowrap;
 }
 .logo span{
     color: rgb(3, 85, 168);
@@ -89,7 +95,7 @@ header{
     justify-content: center;
 }
 .nav-list ul li{
-    margin: 0 15px;
+    margin: 0 3vw;
 }
 .nav-list ul li a{
     color: rgb(3, 85, 168);
@@ -124,6 +130,12 @@ header{
 }
 .mobile-menu{
     display: none;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    background-color: var(--secondary);
+    z-index: 999;
 }
 .mobile-menu ul{
     list-style: none;
@@ -154,9 +166,9 @@ header{
     width: 100%;
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 998px) {
     .nav-bar{
-        padding: 1.5rem 4rem;
+        padding: 1.5rem 1.5rem;
     }
     .nav-list{
         display: none;
@@ -242,8 +254,9 @@ header{
 /*Sobre*/
 
 .about{
-    padding: 130px 0;
+    padding: 100px 0;
     background-color: var(--primary);
+    scroll-margin-top: 150px;
 }
 .section-title{
     text-align: center;
@@ -275,17 +288,29 @@ header{
 }
 .about-text{
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .about-text p{
     font-size: 1.5rem;
     margin-bottom: 30px;
+    justify-content: center;
+    text-align: center;
+    line-height: 2.5;
+    max-width: 80%;
+}
+.about-text p span{
+    font-weight: bold;
+    color: rgb(47, 125, 202);
 }
 
 /*Projects*/
 
 .projects{
-    padding: 130px 0;
+    padding: 100px 0;
     background-color: var(--secondary);
+    scroll-margin-top: 150px;
 }
 .projects-grid{
     display: grid;
@@ -345,9 +370,10 @@ header{
 /*Contato*/
 
 .contact{
-    padding: 130px 0;
+    padding: 15px 0;
     background: linear-gradient(to right, var(--light) 50%, var(--accent));
     color: black;
+    scroll-margin-top: 150px;
 }
 .contact-container{
     display: flex;
@@ -470,12 +496,15 @@ footer{
     padding-bottom: 50px;
     padding-top: 80px;
     background-color: var(--primary);
+    scroll-margin-top: 150px;
 }
 .menu-portfolio ul{
     display: flex;
     justify-content: center;
     list-style: none;
     text-align: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 .menu-portfolio ul li{
     margin: 0 20px;
@@ -509,14 +538,16 @@ footer{
     font-size: 2rem;
     color: rgb(3, 85, 168);
     background: var(--secondary);
-    padding: 10px 100px;
+    padding: 10px 80px;
 }
 .portfolio-grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 15px;
     padding: 30px 80px;
-    scroll-margin-top: 15px;
+}
+.secsection {
+    scroll-margin-top: 150px;
 }
 .portfolio-card{
     background: var(--secondary);
@@ -595,8 +626,37 @@ footer{
 
 /*Media*/
 
-@media screen and (max-width: 730px) {
-    .about, .projects, .contact{
-        scroll-margin-top: 50px;
+@media screen and (max-width: 768px) {
+    header{
+        padding: 0;
+    }
+    .logo{
+        padding: 0 5px;
+    }
+    .about-text p{
+        max-width: 90%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .hero h2{
+        font-size: 2.6rem;
+    }
+    .logo{
+        padding: 0 5px;
+        gap: 10px;
+    }
+}
+@media screen and (max-width: 998px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .contact-container{
+        flex-direction: column;
+    }
+    .logo{
+        padding: 0 5px;
+    }
+    .footer-content h1{
+        font-size: 1.2rem;
     }
 }

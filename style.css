@@ -630,6 +630,12 @@ footer{
     header{
         padding: 0;
     }
+    .hero h2{
+        font-size: 2.8rem;
+    }
+    .hero h3{
+        font-size: 1.8rem;
+    }
     .logo{
         padding: 0 0;
     }

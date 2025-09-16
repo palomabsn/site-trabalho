@@ -636,6 +636,9 @@ footer{
     .hero h3{
         font-size: 1.8rem;
     }
+    .hero img{
+        height: 20px;
+    }
     .logo{
         padding: 0 0;
     }
@@ -649,6 +652,9 @@ footer{
     }
     .hero h3{
         font-size: 1.5rem;
+    }
+    .hero img{
+        height: 18px;
     }
     .logo{
         padding: 0 0;
